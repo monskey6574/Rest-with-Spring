@@ -2,6 +2,7 @@ package com.firstApp.demo1.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -38,6 +39,10 @@ public class UserController {
     @PutMapping("user/{id}")
     public UserDTO updateUser(@RequestBody UserDTO userDTO){
         return userService.updateUser(userDTO);
+    }
+    @DeleteMapping("user/{id}")
+    public String deleteUser(@RequestBody UserDTO userDTO){
+        return userService.deleteUser(userDTO);
     }
 
 
