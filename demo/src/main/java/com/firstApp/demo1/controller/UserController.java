@@ -11,6 +11,9 @@ import com.firstApp.demo1.dto.UserDTO;
 import java.util.List;
 
 import com.firstApp.demo1.service.UserService;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
 
 @RestController
 @CrossOrigin
@@ -31,6 +34,15 @@ public class UserController {
     public UserDTO saveUser(@RequestBody UserDTO userDTO) {
         return userService.saveUser(userDTO);
     }
+
+    @PutMapping("user/{id}")
+    public UserDTO updateUser(@RequestBody UserDTO userDTO){
+        return userService.updateUser(userDTO);
+    }
+
+
+    
+    
 
 
 
